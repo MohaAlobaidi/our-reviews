@@ -29,9 +29,11 @@ const Review = () => {
   }
 
   let randomSuprice=()=>{
-    let randomIndex = Math.round(Math.random()*(people.length-1))
-    console.log(Math.round(randomIndex));
-    return setIndex(randomIndex)
+    let randomIndex = Math.floor(Math.random()*people.length)
+    if(randomIndex === index){
+      randomIndex = randomIndex + 1
+    }
+    return setIndex( checkIndex(randomIndex) )
   }
 
 
